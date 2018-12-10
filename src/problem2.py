@@ -103,7 +103,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -200,8 +200,16 @@ def problem2b(rect, n, delta, win):
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
 
+    rect.attach_to(win)
+
+    note = rect.get_upper_left_corner()
+    mono = rect.get_lower_right_corner()
+
     for k in range(n):
-        note = rg.Rectangle()
+        mark = rg.Rectangle(rg.Point(note.x - k * delta, note.y - k * delta), rg.Point(mono.x + k * delta, mono.y + k * delta))
+        mark.attach_to(win)
+
+    win.render()
 
 
 # -----------------------------------------------------------------------------
