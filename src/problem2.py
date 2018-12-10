@@ -129,6 +129,7 @@ def problem2a(circle, rectangle, window):
 
     window.render()
 
+
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
     print()
@@ -191,7 +192,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -206,7 +207,8 @@ def problem2b(rect, n, delta, win):
     mono = rect.get_lower_right_corner()
 
     for k in range(n):
-        mark = rg.Rectangle(rg.Point(note.x - k * delta, note.y - k * delta), rg.Point(mono.x + k * delta, mono.y + k * delta))
+        mark = rg.Rectangle(rg.Point(note.x - k * delta, note.y - k * delta),
+                            rg.Point(mono.x + k * delta, mono.y + k * delta))
         mark.attach_to(win)
 
     win.render()
