@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and James Kelley.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -112,6 +112,23 @@ def problem2a(circle, rectangle, window):
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
 
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+
+    window.render()
+    window.continue_on_mouse_click()
+
+    note = rg.Line(rectangle.get_upper_right_corner(), rectangle.get_lower_left_corner())
+    note.arrow = 'last'
+    note.attach_to(window)
+
+    window.render()
+    window.continue_on_mouse_click()
+
+    circle.fill_color = rectangle.outline_color
+
+    window.render()
+
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
     print()
@@ -182,6 +199,9 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
+
+    for k in range(n):
+        note = rg.Rectangle()
 
 
 # -----------------------------------------------------------------------------
